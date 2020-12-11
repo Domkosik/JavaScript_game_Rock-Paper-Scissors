@@ -1,0 +1,44 @@
+//imports
+@import 'variables'; // variables, functions...
+@import 'main'; // main css for header and gameBoard
+@import 'form'; // form settings
+@import 'media-queries'; // @media only screen
+
+
+//GENERAL
+
+html {box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit;}
+
+body {
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+	font-size: 100%;
+	font-family: $sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: -webkit-linear-gradient(to right, $color-background0, $color-background1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, $color-background0, $color-background1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex0 {
+    display: flex;
+    flex-direction: column;
+}

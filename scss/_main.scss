@@ -1,0 +1,153 @@
+// 1st HEADER
+#main-header {
+    text-align: center;
+    font-size: em(20);
+    margin-top: em(20);
+    margin-bottom: em(40);
+    font-family: $font-header-text;
+}
+
+#change2 {
+    display: none;
+    font-size: 50%;
+    position: relative;
+    top: 5px;
+}
+
+//----------------------------------------------------------
+// middle - section of the game + objects
+#gameBoard  {
+    max-width: 100%;
+}
+
+#gameObjects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: em(200);
+    margin: auto;
+
+    & .object {
+        max-width: 25%;
+    }
+}
+
+#boardAfter {
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: em(200);
+    & #playerChoice {
+        margin-left: em(20);
+    }
+    & img {
+        max-width: 100%;
+    }
+    & #computerChoice {
+        margin-right: em(20);
+    }
+}
+
+#conclusion{
+    font-family: $sans-serif;
+    text-align: center;
+    margin: 0 em(20);
+    & #win {
+        color: $color-win;
+        text-shadow: em(2) em(2) em(4) #43EF64;
+    }
+    & #lose {
+        color: $color-lose;
+        text-shadow: em(2) em(2) em(4) #ce441a;
+    }
+    & #draw {
+        text-shadow: em(2) em(2) em(4) #2e2d2d;
+    }
+}
+
+.fadein{animation: fadein 0.7s ease;}
+.nofade{animation: none;}
+
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.finished {
+    display: block;
+}
+
+.unfinished {
+    display: none;
+}
+
+.note {
+    display: none; 
+}
+
+//----------------------------------------------------------
+// middle - section of buttons
+#buttons {
+    text-align: center;
+    margin-top: em(40);
+    margin-bottom: em(40);
+}
+
+.btn {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 70%;
+
+    & .fa-hand-paper {
+        transform: rotate(-90deg);
+        position: relative;
+        left: -1px;
+        top: 0;
+    }
+    & .fa-hand-scissors {
+        position: relative;
+        left: -1px;
+        top: 0;
+    }
+    & .fa-fist-raised {
+        transform: rotate(-90deg);
+    }
+}
+
+#btn-paper {
+    transform: rotateX(180deg);
+}
+
+#btn-rock {
+    padding: 10px 12px 10px 12px;
+}
+
+//----------------------------------------------------------
+// footer (not form)
+.footer-header {
+    font-family: $font-form-header-text;
+    font-size: em(15);
+    margin-top: em(15);
+    margin-bottom: em(30);
+}
+
+.footer-stuff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#signature {
+    text-align: center;
+    font-family: $sans-serif;   
+    font-size: em(12);
+    font-style: italic;
+    margin-top: em(40);
+}

@@ -1,0 +1,58 @@
+form {
+    min-width: 30%;
+    border: em(1) solid black;
+    border-radius: em(8);
+    padding: em(20);
+    box-shadow: em(0) em(0) em(12) black;
+}
+
+#email_err {
+    display: block;
+    text-align: center;
+}
+
+input[type=text] {
+    display: block;
+    width: 100%;
+    margin: em(10) auto;
+    outline: none;
+    border-radius: em(10);
+    padding: em(5);
+    border: 2px solid $color-form-border;
+    background-color: $color-form-background;
+};
+
+textarea[name=message] {
+    display: block;
+    width: 100%;
+    height: em(200);
+    margin: em(5) 0;
+    resize: none;
+    outline: none;
+    border-radius: em(10);
+    padding: em(5);
+    border: 2px solid $color-form-border;   
+    background-color: $color-form-background;
+};
+
+input[type=text]:focus, 
+textarea[name=message]:focus {
+    background: $color-form-focus-background;
+    color: $color-form-focus-text;
+} 
+
+::placeholder {
+    color: $color-form-placeholder;
+    text-align: center;
+}
+
+#btn-submit {
+    display: block;
+    width: 50%;
+    margin: em(10) auto;
+    border-radius: em(10);
+    padding: em(5);
+    outline: none;
+    border: 2px solid $color-form-border;   
+    background-color: $color-form-background;
+}

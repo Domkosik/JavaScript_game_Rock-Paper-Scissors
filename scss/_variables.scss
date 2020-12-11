@@ -1,0 +1,17 @@
+$font-header-text: 'Glegoo', serif;
+$sans-serif: 'Work Sans', sans-serif;
+$font-form-header-text: 'Josefin Sans', sans-serif;
+$color-background0: #f7ff00; 
+$color-background1: #db36a4; 
+$color-form-border: #7041ff;
+$color-form-background: #ece9e9;
+$color-form-focus-background: #7b4397;
+$color-form-focus-text: #fff;
+$color-form-placeholder: #D38312;
+$color-win: #45B649;
+$color-lose: #FF0000;
+
+
+@function em($size, $context: 16) {
+    @return ($size / $context) + em;
+}
