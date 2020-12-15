@@ -3,8 +3,12 @@
     text-align: center;
     font-size: em(20);
     margin-top: em(20);
-    margin-bottom: em(40);
+    //margin-bottom: em(40);
     font-family: $font-header-text;
+}
+
+h5 {
+    text-align: center;
 }
 
 #change2 {
@@ -12,6 +16,7 @@
     font-size: 50%;
     position: relative;
     top: 5px;
+    transition: color 2s;
 }
 
 //----------------------------------------------------------
@@ -30,7 +35,7 @@
     margin: auto;
 
     & .object {
-        max-width: 25%;
+        max-width: 30%;
     }
 }
 
@@ -38,17 +43,14 @@
     display: none;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
+    width: 85%;
     min-height: em(200);
-    & #playerChoice {
-        margin-left: em(20);
-    }
+    margin: 0 auto;
+
     & img {
         max-width: 100%;
     }
-    & #computerChoice {
-        margin-right: em(20);
-    }
+
 }
 
 #conclusion{
@@ -68,13 +70,19 @@
     }
 }
 
-.fadein{animation: fadein 0.7s ease;}
+.fadein{animation: fadein 0.67s ease ;}
+.fadeout{animation: fadeout 0.7s ease forwards;}
 .nofade{animation: none;}
 
 
 @keyframes fadein {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@keyframes fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
 
 .finished {
@@ -89,12 +97,22 @@
     display: none; 
 }
 
+#scoreBoard {
+    text-align: center;
+    font-size: em(16);
+    font-style: italic;
+}
+
 //----------------------------------------------------------
 // middle - section of buttons
 #buttons {
     text-align: center;
     margin-top: em(40);
     margin-bottom: em(40);
+}
+
+.btn:hover {
+    background-color: rgb(112, 109, 109);
 }
 
 .btn {
@@ -104,6 +122,8 @@
     padding: 10px;
     cursor: pointer;
     font-size: 70%;
+    box-shadow: 5px 0px 0px black;
+
 
     & .fa-hand-paper {
         transform: rotate(-90deg);
@@ -123,11 +143,13 @@
 
 #btn-paper {
     transform: rotateX(180deg);
+    margin: 0 2%;
 }
 
 #btn-rock {
     padding: 10px 12px 10px 12px;
 }
+
 
 //----------------------------------------------------------
 // footer (not form)

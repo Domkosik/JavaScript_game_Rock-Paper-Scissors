@@ -1,7 +1,6 @@
 //❗❗variables❗❗
         ///--------------------------------------------------------------------------------------------------
         let buttons = document.getElementsByClassName("btn");
-        colors = [ '#F70073', '#F700F7', '#F7A500', '#F7F700', '#00D6F7', '#00E700', '#B500F7', '#40E0D0', '#D2691E', '#FFFF00', '#A9A9A9', '#FF1493', '#228B22', '#4B0082', '#BC8F8F'];
         btnRock = document.getElementById("btn-rock");
         btnPaper = document.getElementById("btn-paper");
         btnScissors = document.getElementById("btn-scissors");
@@ -15,14 +14,14 @@
         //win = document.getElementById("win");
         //draw = document.getElementById("draw");
         //note = document.getElementsByClassName("note");
-        let computerObject, playerScore;
+        let computerObject, playerScore0, computerScore0, totalPlayerScore, totalComputerScore;
 
         //❗❗EVENTS❗❗
 
         //--------------------------------------------------------------------------------------------------
-        // On load function --> launch #main_header change & change of colors in icon
-        window.addEventListener("load", SetchangeHeader);
-        window.addEventListener("load", setRandomColor);
+        // On load --> launch #main_header change & change of colors in icon
+        SetchangeHeader();
+        colorInterval();
 
         //--------------------------------------------------------------------------------------------------
         // If user click on buttons --> change GameBoards, generate random object
@@ -39,16 +38,19 @@
         // If user click on rock button --> generate ROCK object and result
         btnRock.addEventListener("click", showRock);
         btnRock.addEventListener("click", playRock);
+        btnRock.addEventListener("click", score);
 
         //--------------------------------------------------------------------------------------------------
         // If user click on paper button --> show PAPER object and result
         btnPaper.addEventListener("click", showPaper);
         btnPaper.addEventListener("click", playPaper);
+        btnPaper.addEventListener("click", score);
 
         //--------------------------------------------------------------------------------------------------
         // If user click on scissors button --> generate SCISSORS object and result
         btnScissors.addEventListener("click", showScissors);
         btnScissors.addEventListener("click", playScissors);
+        btnScissors.addEventListener("click", score);
 
         //--------------------------------------------------------------------------------------------------
         // If user click & keyDown on "input - email" launch emailValidation
@@ -67,15 +69,16 @@
         //--------------------------------------------------------------------------------------------------
         // function: generate ROCK object
         function showRock(){
-            playerScore = 1;
+        
             const playerImg = document.querySelector(".playerChoice");
             playerImg.src = "img/1.png";
+
         }
 
          //--------------------------------------------------------------------------------------------------
         // function: generate PAPER object
         function showPaper(){
-            playerScore = 2;
+            
             const playerImg = document.querySelector(".playerChoice");
             playerImg.src = "img/2.png";
         }
@@ -83,7 +86,7 @@
         //--------------------------------------------------------------------------------------------------
         // function: generate Scissors object
         function showScissors(){
-            playerScore = 3;
+            
             const playerImg = document.querySelector(".playerChoice");
             playerImg.src = "img/3.png";
         }
@@ -96,19 +99,27 @@
                     lose.classList.add("finished");
                     win.classList.add("unfinished");
                     draw.classList.add("unfinished");
+                    playerScore0 = 0;
+                    computerScore0 = 1;
+
                 }
                 else if (computerObject === 3){
                     win.classList.remove("unfinished");
                     win.classList.add("finished");
                     lose.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    
+                    playerScore0 = 1;
+                    computerScore0 = 0;
+
                 }
                 else if (computerObject === 1){
                     draw.classList.remove("unfinished");
                     draw.classList.add("finished");
                     lose.classList.add("unfinished");
                     win.classList.add("unfinished");
+                    playerScore0 = 0;
+                    computerScore0 = 0;
+
                 }
             }
 
@@ -120,21 +131,30 @@
                     draw.classList.add("finished");
                     lose.classList.add("unfinished");
                     win.classList.add("unfinished");
-                    
+                    playerScore0 = 0;
+                    computerScore0 = 0;
+                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
                 }
                 else if (computerObject === 3){
                     lose.classList.remove("unfinished");
                     lose.classList.add("finished");
                     win.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    
+                    playerScore0 = 0;
+                    computerScore0 = 1;
+                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
                 }
                 else if (computerObject === 1){
                     win.classList.remove("unfinished");
                     win.classList.add("finished");
                     lose.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    
+                    playerScore0 = 1;
+                    computerScore0 = 0;
+                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
                 }
             }
 
@@ -146,52 +166,85 @@
                 win.classList.add("finished");
                 lose.classList.add("unfinished");
                 draw.classList.add("unfinished");
-                
+                playerScore0 = 1;
+                computerScore0 = 0;
+                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
             }
             else if (computerObject === 3){
                 draw.classList.remove("unfinished");
                 draw.classList.add("finished");
                 lose.classList.add("unfinished");
                 win.classList.add("unfinished");
-                
+                playerScore0 = 0;
+                computerScore0 = 0;
+                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
             }
             else if (computerObject === 1){
                 lose.classList.remove("unfinished");
                 lose.classList.add("finished");
                 win.classList.add("unfinished");
                 draw.classList.add("unfinished");
-                
+                playerScore0 = 0;
+                computerScore0 = 1;
+                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
+                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
             }
         }
 
         
+        //--------------------------------------------------------------------------------------------------
+        // function: score of the game
+        function score (){
+        let playerScore = 0;
+            computerScore = 0;
+            totalPlayerScore = playerScore + playerScore0;
+            totalComputerScore = computerScore + computerScore0;
+            document.getElementById("playerScore").innerHTML = "Your score: "+totalPlayerScore;
+            document.getElementById("computerScore").innerHTML = "Opponent's score: "+totalComputerScore;
+        };
 
         //--------------------------------------------------------------------------------------------------
-        // function: change in #main_header from word to icon
+        // function: smooth-transition in #main_header from word to GAMEPAD icon
         function changeHeader(){
-            document.getElementById("change1").style.display = "none";
-            document.getElementById("change2").style.display = "inline-block";
+            document.getElementById("change1").classList.add("fadeout");
+
+            setTimeout(function(){
+                document.getElementById("change1").style.display = "none"
+            }, 700);
+            document.getElementById("change2").classList.add("fadein");
+
+            setTimeout(function(){
+                document.getElementById("change2").style.display = "inline-block"
+            }, 700);
         };
-        
+
         function SetchangeHeader(){
         setTimeout(changeHeader, 2500)
         };
 
         //--------------------------------------------------------------------------------------------------
-        // function: color icon in #main_header by random color from array
-        function setColor() {
-			var newColor = colors[Math.floor(Math.random()*colors.length)];
-			document.getElementById("change2").style.color = newColor;
+        // function: smooth transition of GAMEPAD icon color in #main_header 
+        function changeColor(){
+            var randomColor = "#"+Math.random().toString(16).substr(-6);
+            document.getElementById("change2").style.color = randomColor;
+        }
+        function colorInterval(){
+            setInterval(changeColor, 2200)
         };
-        function setRandomColor(){
-        setInterval(setColor, 2000)
+        
+        //--------------------------------------------------------------------------------------------------
+        // function: smooth transition of GAMEPAD icon color in #main_header 
+        function conclusionFading(){
+
         };
 
         //--------------------------------------------------------------------------------------------------
         // function: email Validation
         var email_name = document.getElementById("email");
 
-        function emailValidation(){
+        function emailValidation(event){
             var key = event.key; // "a", "1", "Shift", etc.
             var mailformat = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/;
             var email_value = email_name.value;

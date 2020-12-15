@@ -3,18 +3,18 @@
     #main-header {margin-bottom: 0.5em;}
 }
 
-@media only screen and (min-width: 300px) and (max-width: 400px) {
-    #main-header {margin-bottom: 1.5em;}
-}
-
 @media only screen and (max-width: 500px) {
-    #conclusion {font-size: em(18);}
     #buttons {margin-top: 0.5em;}
+    #scoreBoard {font-size: em(14);}
 }
 
 @media only screen and (min-width: 500px) {
     #conclusion {font-size: em(18);}
 }
+
+// @media only screen and (min-width: 544px) and (max-width: 950px) {
+//     .playerChoice, .computerChoice {height: em(200);}
+// }
 
 @media only screen and (min-width: 650px) {
     #main-header {font-size: em(25);}

@@ -2,14 +2,17 @@
   text-align: center;
   font-size: 1.25em;
   margin-top: 1.25em;
-  margin-bottom: 2.5em;
   font-family: "Glegoo", serif; }
+
+h5 {
+  text-align: center; }
 
 #change2 {
   display: none;
   font-size: 50%;
   position: relative;
-  top: 5px; }
+  top: 5px;
+  transition: color 2s; }
 
 #gameBoard {
   max-width: 100%; }
@@ -23,20 +26,17 @@
   min-height: 12.5em;
   margin: auto; }
   #gameObjects .object {
-    max-width: 25%; }
+    max-width: 30%; }
 
 #boardAfter {
   display: none;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-  min-height: 12.5em; }
-  #boardAfter #playerChoice {
-    margin-left: 1.25em; }
+  width: 85%;
+  min-height: 12.5em;
+  margin: 0 auto; }
   #boardAfter img {
     max-width: 100%; }
-  #boardAfter #computerChoice {
-    margin-right: 1.25em; }
 
 #conclusion {
   font-family: "Work Sans", sans-serif;
@@ -52,7 +52,10 @@
     text-shadow: 0.125em 0.125em 0.25em #2e2d2d; }
 
 .fadein {
-  animation: fadein 0.7s ease; }
+  animation: fadein 0.67s ease; }
+
+.fadeout {
+  animation: fadeout 0.7s ease forwards; }
 
 .nofade {
   animation: none; }
@@ -63,6 +66,12 @@
   100% {
     opacity: 1; } }
 
+@keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 .finished {
   display: block; }
 
@@ -72,10 +81,18 @@
 .note {
   display: none; }
 
+#scoreBoard {
+  text-align: center;
+  font-size: 1em;
+  font-style: italic; }
+
 #buttons {
   text-align: center;
   margin-top: 2.5em;
   margin-bottom: 2.5em; }
+
+.btn:hover {
+  background-color: #706d6d; }
 
 .btn {
   outline: none;
@@ -83,7 +100,8 @@
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  font-size: 70%; }
+  font-size: 70%;
+  box-shadow: 5px 0px 0px black; }
   .btn .fa-hand-paper {
     transform: rotate(-90deg);
     position: relative;
@@ -97,7 +115,8 @@
     transform: rotate(-90deg); }
 
 #btn-paper {
-  transform: rotateX(180deg); }
+  transform: rotateX(180deg);
+  margin: 0 2%; }
 
 #btn-rock {
   padding: 10px 12px 10px 12px; }
@@ -121,7 +140,7 @@
   margin-top: 2.5em; }
 
 form {
-  min-width: 30%;
+  min-width: 20%;
   border: 0.0625em solid black;
   border-radius: 0.5em;
   padding: 1.25em;
@@ -178,15 +197,11 @@ textarea[name=message]:focus {
   #main-header {
     margin-bottom: 0.5em; } }
 
-@media only screen and (min-width: 300px) and (max-width: 400px) {
-  #main-header {
-    margin-bottom: 1.5em; } }
-
 @media only screen and (max-width: 500px) {
-  #conclusion {
-    font-size: 1.125em; }
   #buttons {
-    margin-top: 0.5em; } }
+    margin-top: 0.5em; }
+  #scoreBoard {
+    font-size: 0.875em; } }
 
 @media only screen and (min-width: 500px) {
   #conclusion {

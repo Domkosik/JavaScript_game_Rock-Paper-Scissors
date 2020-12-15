@@ -22,7 +22,9 @@
 </head>
 <body>
     <div class="flex0">
-        <h1 id="main-header">It's time for a classic <span id="change1">game</span><span id="change2"><i class="fas fa-gamepad fa-3x"></i></span> !</h1>
+        <h1 id="main-header">It's time for a classic <span id="change1">game</span><span id="change2"><i class="fas fa-gamepad fa-3x"></i></span> !
+        </h1>
+        <h5>Challenge the computer</h5>
 
         <section id="gameBoard">
             <div id="gameObjects">
@@ -33,17 +35,29 @@
 
             <div id="boardAfter">
                 <div id="playerChoice"><img class="playerChoice" src=""></div>
-                <div id="conclusion" class="fadein">
+                <div id="conclusion">
                     <p id="win" class="unfinished">YOU WIN!</p>
                     <p id="draw" class="unfinished">DRAW!</p>
                     <p id="lose" class="unfinished">YOU LOSE!</p>
+                    <div id="scoreBoard">
+                        <div id="playerScore">
+                            
+                        </div>
+                        <div id="computerScore">
+                            
+                        </div>
+                    </div>
+                    <!-- commented for later use
                     <p id="rockWin" class="note">Rock breaks scissors.</p>
                     <p id="paperWin" class="note">Paper covers rock.</p>
-                    <p id="scissorsWin" class="note">Scissors cut paper.</p>
+                    <p id="scissorsWin" class="note">Scissors cut paper.</p> 
+                    -->
                 </div>
                 <div id="computerChoice"><img class="computerChoice" src=""></div>
             </div> 
             
+            
+
             <div id="buttons">
                 <button id="btn-rock" class="btn"><i class="fas fa-fist-raised fa-2x"></i></button>
                 <button id="btn-paper" class="btn"><i class="fas fa-hand-paper fa-2x"></i></button>
@@ -54,7 +68,7 @@
 
         <footer>
             <div class="footer-stuff">
-                <h2 class="footer-header">Give me your feedback, please!</h2>
+                <h2 class="footer-header">Please let me know your feedback.</h2>
                 <form action="mailer.php" method="post">
                     <span id="email_err"></span>
                     <input type="text" name="name" placeholder="Name" required>
