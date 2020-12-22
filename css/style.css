@@ -38,10 +38,14 @@ h5 {
   #boardAfter img {
     max-width: 100%; }
 
+.conclusion-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px; }
+
 #conclusion {
   font-family: "Work Sans", sans-serif;
-  text-align: center;
-  margin: 0 1.25em; }
+  text-align: center; }
   #conclusion #win {
     color: #45B649;
     text-shadow: 0.125em 0.125em 0.25em #43EF64; }
@@ -56,9 +60,6 @@ h5 {
 
 .fadeout {
   animation: fadeout 0.7s ease forwards; }
-
-.nofade {
-  animation: none; }
 
 @keyframes fadein {
   0% {
@@ -78,13 +79,11 @@ h5 {
 .unfinished {
   display: none; }
 
-.note {
-  display: none; }
-
 #scoreBoard {
   text-align: center;
   font-size: 1em;
-  font-style: italic; }
+  font-style: italic;
+  color: #484848; }
 
 #buttons {
   text-align: center;
@@ -120,6 +119,27 @@ h5 {
 
 #btn-rock {
   padding: 10px 12px 10px 12px; }
+
+.btn-reset-container {
+  margin-top: 0.9375em; }
+
+#btn-newgame {
+  outline: none;
+  text-transform: uppercase;
+  border-radius: 0.625em;
+  font-weight: 600;
+  padding: 0.3125em;
+  width: 7.5em;
+  height: 3.125em;
+  color: #f3f3f3;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid #f3f3f3;
+  font-size: 70%; }
+
+#btn-newgame:hover {
+  cursor: pointer;
+  border: 1px solid #080808;
+  color: #444343; }
 
 .footer-header {
   font-family: "Josefin Sans", sans-serif;
@@ -205,7 +225,9 @@ textarea[name=message]:focus {
 
 @media only screen and (min-width: 500px) {
   #conclusion {
-    font-size: 1.125em; } }
+    font-size: 1.125em; }
+  #btn-newgame {
+    font-size: 100%; } }
 
 @media only screen and (min-width: 650px) {
   #main-header {
@@ -217,7 +239,7 @@ textarea[name=message]:focus {
 
 @media only screen and (min-width: 815px) {
   #boardAfter {
-    height: 14.375em; } }
+    height: 16.375em; } }
 
 @media only screen and (min-width: 950px) {
   #main-header {
@@ -229,7 +251,7 @@ textarea[name=message]:focus {
   .footer-header {
     font-size: 1.125em; }
   #boardAfter {
-    height: 15.625em; } }
+    height: 17.625em; } }
 
 @media only screen and (min-width: 1060px) {
   #boardAfter {

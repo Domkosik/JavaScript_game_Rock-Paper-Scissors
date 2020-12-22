@@ -27,6 +27,7 @@
         <h5>Challenge the computer</h5>
 
         <section id="gameBoard">
+
             <div id="gameObjects">
                 <img id="objectR" class="object" src="img/1.png" alt="the rock">
                 <img id="objectP" class="object" src="img/2.png" alt="paper">
@@ -35,33 +36,33 @@
 
             <div id="boardAfter">
                 <div id="playerChoice"><img class="playerChoice" src=""></div>
-                <div id="conclusion">
-                    <p id="win" class="unfinished">YOU WIN!</p>
-                    <p id="draw" class="unfinished">DRAW!</p>
-                    <p id="lose" class="unfinished">YOU LOSE!</p>
-                    <div id="scoreBoard">
-                        <div id="playerScore">
-                            
-                        </div>
-                        <div id="computerScore">
-                            
-                        </div>
+
+                <div class="conclusion-container">
+                    <div id="conclusion">
+                        <p id="win" class="unfinished">YOU WIN!</p>
+                        <p id="draw" class="unfinished">DRAW!</p>
+                        <p id="lose" class="unfinished">YOU LOSE!</p>
                     </div>
-                    <!-- commented for later use
-                    <p id="rockWin" class="note">Rock breaks scissors.</p>
-                    <p id="paperWin" class="note">Paper covers rock.</p>
-                    <p id="scissorsWin" class="note">Scissors cut paper.</p> 
-                    -->
+                    <div id="scoreBoard">
+                            <div id="playerScore">
+                                
+                            </div>
+                            <div id="computerScore">
+                                
+                            </div>
+                    </div>
                 </div>
+                
                 <div id="computerChoice"><img class="computerChoice" src=""></div>
             </div> 
-            
-            
 
             <div id="buttons">
                 <button id="btn-rock" class="btn"><i class="fas fa-fist-raised fa-2x"></i></button>
                 <button id="btn-paper" class="btn"><i class="fas fa-hand-paper fa-2x"></i></button>
                 <button id="btn-scissors" class="btn"><i class="fas fa-hand-scissors fa-2x"></i></button>
+                <div class="btn-reset-container">
+                    <button id="btn-newgame">new game</button>
+                </div>
             </div>
 
         </section>

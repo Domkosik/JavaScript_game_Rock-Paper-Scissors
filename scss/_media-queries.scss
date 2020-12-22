@@ -10,11 +10,8 @@
 
 @media only screen and (min-width: 500px) {
     #conclusion {font-size: em(18);}
+    #btn-newgame {font-size: 100%;}
 }
-
-// @media only screen and (min-width: 544px) and (max-width: 950px) {
-//     .playerChoice, .computerChoice {height: em(200);}
-// }
 
 @media only screen and (min-width: 650px) {
     #main-header {font-size: em(25);}
@@ -23,7 +20,7 @@
 }
 
 @media only screen and (min-width: 815px) {
-    #boardAfter {height: em(230);}
+    #boardAfter {height: 16.375em;}
 }
 
 @media only screen and (min-width: 950px) {
@@ -31,7 +28,7 @@
     img {max-width: 85%;}
     .btn {font-size: 100%;}
     .footer-header {font-size: em(18);}
-    #boardAfter {height: em(250);}
+    #boardAfter {height: 17.625em;}
 }
 
 @media only screen and (min-width: 1060px) {

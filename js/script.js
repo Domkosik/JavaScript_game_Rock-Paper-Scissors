@@ -4,9 +4,12 @@
         btnRock = document.getElementById("btn-rock");
         btnPaper = document.getElementById("btn-paper");
         btnScissors = document.getElementById("btn-scissors");
+        btnNewGame = document.getElementById("btn-newgame");
         gameObjects = document.getElementById("gameObjects");
         boardAfter = document.getElementById("boardAfter");
         conclusion = document.getElementById("conclusion");
+        playerScore0 = 0;
+        computerScore0 = 0;
         //rockWin = document.getElementById("rockWin");
         //paperWin = document.getElementById("paperWin");
         //scissorsWin = document.getElementById("scissorsWin");
@@ -14,13 +17,13 @@
         //win = document.getElementById("win");
         //draw = document.getElementById("draw");
         //note = document.getElementsByClassName("note");
-        let computerObject, playerScore0, computerScore0, totalPlayerScore, totalComputerScore;
+        let computerObject, playerScore, computerScore, totalPlayerScore, totalComputerScore;
 
         //❗❗EVENTS❗❗
 
         //--------------------------------------------------------------------------------------------------
         // On load --> launch #main_header change & change of colors in icon
-        SetchangeHeader();
+        SetChangeHeader();
         colorInterval();
 
         //--------------------------------------------------------------------------------------------------
@@ -30,15 +33,17 @@
             gameObjects.style.display = "none"; 
             boardAfter.style.display = "flex";
             randomObject();
-            conclusion.classList.add("fadeIn");
+            conclusion.classList.add("fadein");
+            fadeInConclusion();
         })}
         
-
         //--------------------------------------------------------------------------------------------------
         // If user click on rock button --> generate ROCK object and result
         btnRock.addEventListener("click", showRock);
         btnRock.addEventListener("click", playRock);
         btnRock.addEventListener("click", score);
+        btnRock.addEventListener("focus", function(){
+        });
 
         //--------------------------------------------------------------------------------------------------
         // If user click on paper button --> show PAPER object and result
@@ -53,6 +58,10 @@
         btnScissors.addEventListener("click", score);
 
         //--------------------------------------------------------------------------------------------------
+        // If user click on NewGame button --> reset game
+        btnNewGame.addEventListener("click", newGame);
+
+        //--------------------------------------------------------------------------------------------------
         // If user click & keyDown on "input - email" launch emailValidation
         document.getElementById("email").addEventListener("blur", emailValidation);
 
@@ -63,7 +72,6 @@
             computerObject = Math.ceil(Math.random()*3);
             let computerImg = document.querySelector(".computerChoice");
             computerImg.src = "img/"+computerObject+".png";
-            conclusion.classList.remove("fadeIn");
         }
 
         //--------------------------------------------------------------------------------------------------
@@ -99,27 +107,20 @@
                     lose.classList.add("finished");
                     win.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    playerScore0 = 0;
-                    computerScore0 = 1;
-
+                    computerScore0 = computerScore0 + 1;
                 }
                 else if (computerObject === 3){
                     win.classList.remove("unfinished");
                     win.classList.add("finished");
                     lose.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    playerScore0 = 1;
-                    computerScore0 = 0;
-
+                    playerScore0 = playerScore0 + 1;
                 }
                 else if (computerObject === 1){
                     draw.classList.remove("unfinished");
                     draw.classList.add("finished");
                     lose.classList.add("unfinished");
                     win.classList.add("unfinished");
-                    playerScore0 = 0;
-                    computerScore0 = 0;
-
                 }
             }
 
@@ -131,30 +132,20 @@
                     draw.classList.add("finished");
                     lose.classList.add("unfinished");
                     win.classList.add("unfinished");
-                    playerScore0 = 0;
-                    computerScore0 = 0;
-                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
                 }
                 else if (computerObject === 3){
                     lose.classList.remove("unfinished");
                     lose.classList.add("finished");
                     win.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    playerScore0 = 0;
-                    computerScore0 = 1;
-                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
+                    computerScore0 = computerScore0 + 1;
                 }
                 else if (computerObject === 1){
                     win.classList.remove("unfinished");
                     win.classList.add("finished");
                     lose.classList.add("unfinished");
                     draw.classList.add("unfinished");
-                    playerScore0 = 1;
-                    computerScore0 = 0;
-                    // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                    // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
+                    playerScore0 = playerScore0 + 1;
                 }
             }
 
@@ -166,30 +157,20 @@
                 win.classList.add("finished");
                 lose.classList.add("unfinished");
                 draw.classList.add("unfinished");
-                playerScore0 = 1;
-                computerScore0 = 0;
-                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
+                playerScore0 = playerScore0 + 1;
             }
             else if (computerObject === 3){
                 draw.classList.remove("unfinished");
                 draw.classList.add("finished");
                 lose.classList.add("unfinished");
                 win.classList.add("unfinished");
-                playerScore0 = 0;
-                computerScore0 = 0;
-                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
             }
             else if (computerObject === 1){
                 lose.classList.remove("unfinished");
                 lose.classList.add("finished");
                 win.classList.add("unfinished");
                 draw.classList.add("unfinished");
-                playerScore0 = 0;
-                computerScore0 = 1;
-                // document.getElementById("playerScore").innerHTML = "Your score: "+playerScore0;
-                // document.getElementById("computerScore").innerHTML = "Opponent's score: "+computerScore0;
+                computerScore0 = computerScore0 + 1;
             }
         }
 
@@ -197,13 +178,22 @@
         //--------------------------------------------------------------------------------------------------
         // function: score of the game
         function score (){
-        let playerScore = 0;
-            computerScore = 0;
+            let playerScore = 0;
+                computerScore = 0;
             totalPlayerScore = playerScore + playerScore0;
             totalComputerScore = computerScore + computerScore0;
             document.getElementById("playerScore").innerHTML = "Your score: "+totalPlayerScore;
             document.getElementById("computerScore").innerHTML = "Opponent's score: "+totalComputerScore;
         };
+
+        //--------------------------------------------------------------------------------------------------
+        // function: reset score, reset game-boards
+        function newGame(){
+            boardAfter.style.display = "none";
+            gameObjects.style.display = "flex";
+            playerScore0 = 0;
+            computerScore0 = 0;
+        }
 
         //--------------------------------------------------------------------------------------------------
         // function: smooth-transition in #main_header from word to GAMEPAD icon
@@ -220,7 +210,7 @@
             }, 700);
         };
 
-        function SetchangeHeader(){
+        function SetChangeHeader(){
         setTimeout(changeHeader, 2500)
         };
 
@@ -235,9 +225,12 @@
         };
         
         //--------------------------------------------------------------------------------------------------
-        // function: smooth transition of GAMEPAD icon color in #main_header 
+        // function: fadeIn conclusion of the game - higher in the code used on on the click Event for btn's
         function conclusionFading(){
-
+            conclusion.classList.remove("fadein")
+        };
+        function fadeInConclusion(){
+            setTimeout(conclusionFading,500);
         };
 
         //--------------------------------------------------------------------------------------------------
