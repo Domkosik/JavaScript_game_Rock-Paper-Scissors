@@ -34,7 +34,9 @@
             boardAfter.style.display = "flex";
             randomObject();
             conclusion.classList.add("fadein");
-            fadeInConclusion();
+            document.querySelector(".playerChoice").classList.add("shaking");
+            document.querySelector(".computerChoice").classList.add("shaking");
+            classRemove();
         })}
         
         //--------------------------------------------------------------------------------------------------
@@ -225,12 +227,14 @@
         };
         
         //--------------------------------------------------------------------------------------------------
-        // function: fadeIn conclusion of the game - higher in the code used on on the click Event for btn's
-        function conclusionFading(){
+        // function: removing of classes - higher in the code are added when user click Event for btn's
+        function classRemoving(){
             conclusion.classList.remove("fadein")
+            document.querySelector(".playerChoice").classList.remove("shaking");
+            document.querySelector(".computerChoice").classList.remove("shaking");
         };
-        function fadeInConclusion(){
-            setTimeout(conclusionFading,500);
+        function classRemove(){
+            setTimeout(classRemoving,500);
         };
 
         //--------------------------------------------------------------------------------------------------
