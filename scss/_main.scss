@@ -77,6 +77,7 @@ h5 {
 
 .fadein{animation: fadein 0.67s ease ;}
 .fadeout{animation: fadeout 0.7s ease forwards;}
+.shaking{animation: shaking 0.6s ease;}
 
 @keyframes fadein {
     0% {opacity: 0;}
@@ -86,6 +87,20 @@ h5 {
 @keyframes fadeout {
     0% {opacity: 1;}
     100% {opacity: 0;}
+}
+
+@keyframes shaking {
+    0% {position: relative; left: 10px; top: 2px;}
+    10% {position: relative; left: -10px;top: 3px;}
+    20% {position: relative; left: 10px; top: 4px;}
+    30% {position: relative; left: -10px; top: 4px;}
+    40% {position: relative; left: 10px; top: 5px;}
+    50% {position: relative; left: -10px; top: 6px;}
+    60% {position: relative; left: 10px; top: 5px;}
+    70% {position: relative; left: -10px; top: 4px;}
+    80% {position: relative; left: 10px; top: 3px;}
+    90% {position: relative; left: -10px; top: 2px;}
+    100% {position: relative; left: 10px; top: 1px;}
 }
 
 .finished {
